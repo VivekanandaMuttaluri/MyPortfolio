@@ -1,0 +1,72 @@
+/* Global styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #0d1b2a; /* Dark blue background */
+    color: #e0f7ef; /* Mint green text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  /* Card container styles */
+  .card-container {
+    width: 90%; /* 90% of the window size */
+    max-width: 1200px; /* Optional: Maximum width */
+    background-color: #1b263b; /* Slightly lighter dark blue */
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+  }
+  
+  /* Left side (Image) */
+  .card-left {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .profile-image {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    border: 5px solid #7dfdf0; /* Mint green border */
+    object-fit: cover;
+  }
+  
+  /* Right side (Content) */
+  .card-right {
+    flex: 2;
+    padding: 0 20px;
+  }
+  
+  .card-title {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color:rgb(126, 255, 253); /* Mint green heading */
+  }
+  
+  .card-points {
+    list-style: circle;
+    padding: 0;
+    margin-bottom: 15px;
+  }
+  
+  .card-points li {
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+  
+  .card-description {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #d4e2dc; /* Slightly dimmed mint green for better readability */
+  }
+  

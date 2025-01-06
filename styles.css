@@ -1,0 +1,80 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #36f5ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+.card {
+    display: flex;
+    width: 90%;
+    max-width: 1200px;
+    background-color: #003366; /* Dark Blue */
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.card:hover {
+    transform: translateY(-5px) ;
+    
+}
+.card-left {
+    flex: 1;
+    max-width: 50%;
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-right {
+    flex: 2;
+    padding: 20px;
+    color: #98ff98; /* Mint Green */
+}
+
+.card-right ul {
+    text-indent: 25px;
+    list-style: square;
+    margin-bottom: 20px;
+    text-align: left ;
+    font-size: x-large;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.card-right li {
+    margin: 10px 0;
+}
+
+.card-right p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    text-indent: 20px;
+}
+
+.back-btn {
+    padding: 10px 20px;
+    background-color: #00ff3c; /* Dark Blue */
+    color: #f1feff; /* Mint Green */
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.back-btn:hover {
+    background-color: #00f2ff; /* Darker Blue */
+}
