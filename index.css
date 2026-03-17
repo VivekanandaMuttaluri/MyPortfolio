@@ -1,0 +1,176 @@
+:root {
+  --primary: #001d3d;
+  --nav: #020e1b;
+  --accent: #80ffdb;
+  --white: #ffffff;
+  --card: #98f1fa;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+/* ── SCROLL SNAP SETUP ── */
+html {
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  height: 100%;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #01063b;
+  color: white;
+  line-height: 1.6;
+  height: 100%;
+}
+
+#particles-js {
+  position: fixed;
+  width: 100%; height: 100%;
+  top: 0; left: 0;
+  z-index: -1;
+}
+
+/* ── NAVBAR ── */
+nav {
+  position: fixed;
+  width: 100%; top: 0;
+  background: var(--nav);
+  padding: 0.75rem 0;
+  z-index: 1000;
+}
+.nav-content {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2rem;
+}
+.logo { color: var(--accent); font-size: 1.3rem; font-weight: bold; white-space: nowrap; }
+.nav-links { display: flex; list-style: none; flex-wrap: wrap; justify-content: flex-end; gap: 0.25rem; }
+.nav-links li a { color: var(--white); text-decoration: none; padding: 0.4rem 0.75rem; transition: 0.3s; font-size: 0.95rem; white-space: nowrap; }
+.nav-links li a:hover { color: var(--accent); }
+.nav-links img { width: 32px; vertical-align: middle; }
+
+/* ── SECTIONS: each one = exactly one full screen ── */
+section {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 6rem 2rem 4rem;
+}
+
+/* ── SCROLL REVEAL ── */
+.section-hidden {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+.section-visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+
+/* ── HERO ── */
+.hero { text-align: center; }
+.hero h1 { font-size: clamp(1.8rem, 5vw, 3rem); color: var(--accent); margin-bottom: 1rem; }
+.hero p { font-size: clamp(1rem, 2.5vw, 1.4rem); max-width: 700px; margin: 0 auto; }
+
+/* ── ABOUT ── */
+.about-head { text-align: center; color: var(--accent); font-size: clamp(1.8rem, 4vw, 2.5rem); margin-bottom: 1.5rem; }
+.about-content { max-width: 800px; margin: auto; width: 100%; }
+.about-text { font-size: clamp(0.85rem, 1.8vw, 1rem); text-indent: 30px; }
+.about-text p { margin-bottom: 0.75rem; }
+
+/* ── SKILLS ── */
+.s { text-align: center; }
+.s h2 { color: var(--accent); font-size: clamp(1.8rem, 4vw, 2.5rem); }
+.skills-container { display: flex; justify-content: center; flex-wrap: wrap; gap: 24px; margin-top: 30px; padding: 0 1rem; }
+.skill { width: 52px; height: 200px; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; flex-shrink: 0; }
+.bar { width: 100%; height: 0; background: linear-gradient(180deg, #5dbfe9, #2563eb); border-radius: 8px; transition: height 0.6s ease; }
+.skill span { margin-top: 8px; font-size: 12px; text-align: center; word-break: break-word; }
+.skill:hover .bar { background: #53dbfc; transform: scale(1.08); }
+
+/* ── PROJECTS ── */
+#projects h2 { text-align: center; color: var(--accent); font-size: clamp(1.8rem, 4vw, 2.5rem); margin-bottom: 2rem; }
+.projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; max-width: 1200px; margin: 0 auto; width: 100%; }
+.project-card { background: var(--card); padding: 1rem; border-radius: 12px; transition: transform 0.3s; }
+.project-card img { width: 100%; height: 160px; object-fit: cover; border-radius: 10px; }
+.project-card h3 { text-align: center; color: black; margin-top: 8px; font-size: 0.9rem; }
+.project-card:hover { transform: translateY(-8px); }
+
+/* ── CONTACT INFO ── */
+.me { text-align: center; }
+.me h2 { color: var(--accent); font-size: clamp(1.8rem, 4vw, 2.5rem); margin-bottom: 1rem; }
+.me a { color: var(--accent); }
+.me p { font-size: clamp(0.9rem, 2vw, 1rem); word-break: break-word; margin-bottom: 0.4rem; }
+
+/* ── FORM ── */
+#contact h2 { text-align: center; color: var(--accent); font-size: clamp(1.8rem, 4vw, 2.5rem); margin-bottom: 1.5rem; }
+
+/* These two sections have little content — don't force full screen height */
+#me, #contact {
+  min-height: unset;
+  height: auto;
+  padding-top: 8rem;
+  padding-bottom: 6rem;
+}
+.contact-content { margin: auto; width: min(100%, 500px); padding: 0 1rem; }
+form { display: flex; flex-direction: column; gap: 0.85rem; }
+label { display: block; }
+input, textarea { padding: 0.85rem; border: none; border-radius: 6px; width: 100%; font-size: 1rem; }
+textarea { min-height: 120px; resize: vertical; }
+button { background: #538bc8; color: white; padding: 0.85rem; border: none; border-radius: 6px; cursor: pointer; font-size: 1rem; transition: 0.3s; }
+button:hover { background: var(--accent); color: #001d3d; }
+
+/* ── FOOTER ── */
+footer {
+  scroll-snap-align: start;
+  background: #001d3d;
+  text-align: center;
+  padding: 2rem 1rem;
+  font-size: 0.9rem;
+}
+
+/* ── TABLET ── */
+@media (max-width: 1024px) {
+  .contact-content { width: min(100%, 480px); }
+  .skill { width: 48px; height: 180px; }
+  .skills-container { gap: 18px; }
+}
+
+/* ── MOBILE ── */
+@media (max-width: 768px) {
+  .nav-content { flex-direction: column; gap: 0.5rem; padding: 0.4rem 1rem; }
+  .nav-links { justify-content: center; gap: 0.1rem; }
+  .nav-links li a { padding: 0.3rem 0.45rem; font-size: 0.82rem; }
+
+  section {
+    padding: 5.5rem 1.2rem 1.5rem;
+    /* height stays 100vh — each section = one full phone screen */
+  }
+
+  .about-text { font-size: 0.82rem; text-indent: 14px; }
+  .skill { width: 40px; height: 160px; }
+  .skill span { font-size: 10px; }
+  .skills-container { gap: 12px; }
+  .projects-grid { grid-template-columns: repeat(2, 1fr); gap: 1rem; }
+  .project-card img { height: 120px; }
+  .contact-content { width: 100%; padding: 0; }
+}
+
+/* ── SMALL MOBILE ── */
+@media (max-width: 480px) {
+  .nav-links li a { padding: 0.28rem 0.38rem; font-size: 0.75rem; }
+  .logo { font-size: 1rem; }
+  section { padding: 5rem 1rem 1rem; }
+  .skill { width: 34px; height: 140px; }
+  .skill span { font-size: 9px; }
+  .projects-grid { grid-template-columns: 1fr; }
+  .project-card img { height: 130px; }
+}

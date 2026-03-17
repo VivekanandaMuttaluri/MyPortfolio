@@ -4,26 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Portfolio</title>
-  <link rel="stylesheet" href="style1.css">
+  <link rel="stylesheet" href="index.css">
   <link rel="icon" href="images/icon.png">
 </head>
 <body>
 
   <div id="particles-js"></div>
   <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
-  <script>
-    particlesJS("particles-js", {
-      particles: {
-        number: { value: 120 },
-        color: { value: "#ffffff" },
-        shape: { type: "circle" },
-        opacity: { value: 0.8 },
-        size: { value: 2, random: true },
-        move: { enable: true, speed: 1.5, direction: "bottom", random: true, straight: false, out_mode: "out" },
-        line_linked: { enable: false }
-      }
-    });
-  </script>
+<script src="background.js"></script>
 
   <nav>
     <div class="nav-content">
@@ -34,7 +22,7 @@
         <li><a href="#projects">Projects</a></li>
         <li><a href="#me">Contact</a></li>
         <li><a href="https://www.linkedin.com/in/vivek-muttaluri-588a72240/" target="_blank">LinkedIn</a></li>
-        <li><a href="me.html"><img src="images/image.png" alt="" id="icon"></a></li>
+        <li><a href="profile.html"><img src="images/image.png" alt="" id="icon"></a></li>
       </ul>
     </div>
   </nav>
@@ -81,8 +69,8 @@
   <section id="projects">
     <h2><i>My Projects</i></h2>
     <div class="projects-grid">
-      <div class="project-card"><a href=""><img src="images/ongoing.jpg" alt=""><h3>Working on a Project with Devops tools</h3></a></div>
-      <div class="project-card"><a href=""><img src="images/FSM2.jpeg" alt=""><h3>FSM<br> Field Service Management</h3></a></div>
+      <div class="project-card"><a href="ongoing.html"><img src="images/ongoing.jpg" alt=""><h3>Working on a Project with Devops tools</h3></a></div>
+      <div class="project-card"><a href="FSM.html"><img src="images/FSM2.jpeg" alt=""><h3>FSM<br> Field Service Management</h3></a></div>
       <div class="project-card"><a href="face.html"><img src="images/facialRec.webp" alt=""><h3>Facial Recognition for Criminal Detection</h3></a></div>
       <div class="project-card"><a href="water.html"><img src="images/waterS.jpg" alt=""><h3>Water Savage system</h3></a></div>
       <div class="project-card"><a href="tour.html"><img src="images/southernT.webp" alt=""><h3>Southern Tourism</h3></a></div>
@@ -125,7 +113,7 @@
 </form>
 <script>
 
-const scriptURL = "https://script.google.com/macros/s/AKfycbxcJI08eXHd5A5Z8c1L0OPm5HToC3pJp2J2qb_vTj6jehY3RnHfNNxT7zp7ME7FEOM5/exec";
+const scriptURL = "https://script.google.com/macros/s/AKfycbwrRvvSML-RXStSapbUeMNMxatSxAJJ7B0oHSBrBr9v2YrFRH8dG09zVl2uznwru_ishg/exec";
 
 document.getElementById("contact-form").addEventListener("submit", function(e){
 
