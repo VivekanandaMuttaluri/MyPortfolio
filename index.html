@@ -64,21 +64,25 @@
     <div class="s"><h2><i>Skills</i></h2><br><br></div>
     <div class="skills-container">
       <div class="skill" data-level="4"><div class="bar"></div><span>DevOps</span></div>
+      <div class="skill" data-level="4"><div class="bar"></div><span>AWS</span></div>
       <div class="skill" data-level="5"><div class="bar"></div><span>Linux</span></div>
       <div class="skill" data-level="4"><div class="bar"></div><span>Jenkins</span></div>
       <div class="skill" data-level="3"><div class="bar"></div><span>Docker</span></div>
-      <div class="skill" data-level="3"><div class="bar"></div><span>Kubernetes</span></div>
+      <div class="skill" data-level="3"><div class="bar"></div><span>K8s</span></div>
       <div class="skill" data-level="5"><div class="bar"></div><span>Java</span></div>
       <div class="skill" data-level="4"><div class="bar"></div><span>SQL</span></div>
       <div class="skill" data-level="5"><div class="bar"></div><span>HTML</span></div>
       <div class="skill" data-level="4"><div class="bar"></div><span>CSS</span></div>
-      <div class="skill" data-level="3"><div class="bar"></div><span>JavaScript</span></div>
+      <div class="skill" data-level="3"><div class="bar"></div><span>JS</span></div>
+      <div class="skill" data-level="3"><div class="bar"></div><span>Angular</span></div>
     </div>
   </section>
 
   <section id="projects">
     <h2><i>My Projects</i></h2>
     <div class="projects-grid">
+      <div class="project-card"><a href=""><img src="images/ongoing.jpg" alt=""><h3>Working on a Project with Devops tools</h3></a></div>
+      <div class="project-card"><a href=""><img src="images/FSM2.jpeg" alt=""><h3>FSM<br> Field Service Management</h3></a></div>
       <div class="project-card"><a href="face.html"><img src="images/facialRec.webp" alt=""><h3>Facial Recognition for Criminal Detection</h3></a></div>
       <div class="project-card"><a href="water.html"><img src="images/waterS.jpg" alt=""><h3>Water Savage system</h3></a></div>
       <div class="project-card"><a href="tour.html"><img src="images/southernT.webp" alt=""><h3>Southern Tourism</h3></a></div>
@@ -93,18 +97,62 @@
     <p>Phone: [+91 8374802440]</p>
     <p>LinkedIn: <a href="https://www.linkedin.com/in/vivek-muttaluri-588a72240/" target="_blank">[vivek-muttaluri-588a72240]</a></p>
     <p>GitHub: <a href="https://github.com/VivekanandaMuttaluri" target="_blank">[VivekanandaMuttaluri-github-profile]</a></p>
-  </section>
-
-  <section id="contact">
-    <h2><i>Ask me</i></h2>
+    <br>
+    <h2><i>Or Get in Touch via Form </i></h2>
     <div class="contact-content">
-      <form action="https://formspree.io/f/xaqplydp" method="POST">
+      <!-- <form action="https://formspree.io/f/xaqplydp" method="POST">
         <label><input type="text" placeholder="Name" name="name" required></label>
         <label><input type="email" placeholder="E-mail" name="email" required></label>
         <label><input name="company" placeholder="Provide your company name"></label>
         <label><textarea name="message" placeholder="Please give a message"></textarea></label>
         <button type="submit">Send</button>
-      </form>
+      </form> -->
+
+      <form id="contact-form">
+
+<input type="text" id="name" placeholder="Your Name" required>
+
+<input type="email" id="email" placeholder="Your Email" required>
+
+<input type="company" id="company" placeholder="Your Company" required>
+
+<textarea id="message" placeholder="Your Message"></textarea>
+
+<i>Just click once and wait for 5-9 seconds please</i>
+
+<button type="submit">Send</button>
+
+</form>
+<script>
+
+const scriptURL = "https://script.google.com/macros/s/AKfycbxcJI08eXHd5A5Z8c1L0OPm5HToC3pJp2J2qb_vTj6jehY3RnHfNNxT7zp7ME7FEOM5/exec";
+
+document.getElementById("contact-form").addEventListener("submit", function(e){
+
+e.preventDefault();
+
+const data = {
+name: document.getElementById("name").value,
+email: document.getElementById("email").value,
+company: document.getElementById("company").value,
+message: document.getElementById("message").value
+};
+
+fetch(scriptURL, {
+method: "POST",
+body: JSON.stringify(data)
+})
+.then(response => {
+alert("Form submitted successfully!");
+document.getElementById("contact-form").reset();
+})
+.catch(error => {
+alert("Error! Please try again.");
+});
+
+});
+
+</script>
     </div>
   </section>
 
