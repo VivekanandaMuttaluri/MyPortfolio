@@ -53,8 +53,8 @@ more ...
 
 ## 📬 Contact
 - Email: vivekanandamuttaluri@gmail.com
-- LinkedIn: https://linkedin.com/in/your-profile
-- GitHub: https://github.com/your-username
+- LinkedIn: https://www.linkedin.com/in/vivek-muttaluri-588a72240/
+- GitHub: https://github.com/VivekanandaMuttaluri
 
 ---
 
