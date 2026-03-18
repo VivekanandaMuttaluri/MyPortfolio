@@ -22,7 +22,6 @@ I enjoy building web apps and applications.
 ---
 
 ## 🛠️ Tech Stack
--
 - DevOps
 - AWS
 - Linux
