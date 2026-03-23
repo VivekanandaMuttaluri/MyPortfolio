@@ -108,3 +108,38 @@ body {
   background: #53dbfc;
   transform: scale(1.05);
 }
+
+
+/* Add this at the bottom of your CSS file */
+
+@media (max-width: 768px) {
+  body {
+    align-items: flex-start;
+    padding: 20px 0;
+  }
+
+  .card {
+    flex-direction: column;
+    width: 95%;
+  }
+
+  .card-left {
+    max-width: 100%;
+    width: 100%;
+    height: 250px;        /* fixed height so image isn't too tall */
+  }
+
+  .card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;    /* crops nicely, stays centered */
+  }
+
+  .card-right {
+    padding: 20px;
+  }
+
+  .card-right ul {
+    font-size: 1rem;
+  }
+}
