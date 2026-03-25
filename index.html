@@ -59,7 +59,8 @@
       <div class="skill" data-level="3"><div class="bar"></div><span>K8s</span></div>
       <div class="skill" data-level="5"><div class="bar"></div><span>Java</span></div>
       <div class="skill" data-level="4"><div class="bar"></div><span>SQL</span></div>
-      <div class="skill" data-level="5"><div class="bar"></div><span>HtmlCss</span></div>
+      <div class="skill" data-level="5"><div class="bar"></div><span>HTML</span></div>
+      <div class="skill" data-level="4"><div class="bar"></div><span>CSS</span></div>
       <div class="skill" data-level="3"><div class="bar"></div><span>JS</span></div>
       <div class="skill" data-level="3"><div class="bar"></div><span>Angular</span></div>
     </div>
@@ -107,38 +108,48 @@
 
 <i>Just click once and wait for 5-9 seconds please</i>
 
-<button type="submit">Send</button>
+<button type="submit" id="sendBtn">Send</button>
 
 </form>
 <script>
-
 const scriptURL = "https://script.google.com/macros/s/AKfycbwrRvvSML-RXStSapbUeMNMxatSxAJJ7B0oHSBrBr9v2YrFRH8dG09zVl2uznwru_ishg/exec";
 
-document.getElementById("contact-form").addEventListener("submit", function(e){
+const form = document.getElementById("contact-form");
+const btn = document.getElementById("sendBtn");
 
-e.preventDefault();
+form.addEventListener("submit", function(e){
+    e.preventDefault();
 
-const data = {
-name: document.getElementById("name").value,
-email: document.getElementById("email").value,
-company: document.getElementById("company").value,
-message: document.getElementById("message").value
-};
+    btn.innerText = "Sending...";
+    btn.disabled = true;
 
-fetch(scriptURL, {
-method: "POST",
-body: JSON.stringify(data)
-})
-.then(response => {
-alert("Form submitted successfully!");
-document.getElementById("contact-form").reset();
-})
-.catch(error => {
-alert("Error! Please try again.");
+    const data = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        company: document.getElementById("company").value,
+        message: document.getElementById("message").value
+    };
+
+    fetch(scriptURL, {
+        method: "POST",
+        body: JSON.stringify(data)
+    })
+    .then(res => res.text())   // 👈 important fix
+    .then(data => {
+        alert("✅ Form submitted successfully!");
+        form.reset();
+
+        btn.innerText = "Send";
+        btn.disabled = false;
+    })
+    .catch(err => {
+        console.error(err);   // 👈 shows real error
+        alert("❌ Error! Check console (F12)");
+
+        btn.innerText = "Send";
+        btn.disabled = false;
+    });
 });
-
-});
-
 </script>
     </div>
   </section>
