@@ -11,7 +11,7 @@
 
   <div id="particles-js"></div>
   <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
-<script src="background.js"></script>
+  <script src="background.js"></script>
 
   <nav>
     <div class="nav-content">
@@ -51,18 +51,18 @@
   <section class="skills-section">
     <div class="s"><h2><i>Skills</i></h2><br><br></div>
     <div class="skills-container">
-      <div class="skill" data-level="4"><div class="bar"></div><span>DevOps</span></div>
-      <div class="skill" data-level="4"><div class="bar"></div><span>AWS</span></div>
-      <div class="skill" data-level="5"><div class="bar"></div><span>Linux</span></div>
-      <div class="skill" data-level="4"><div class="bar"></div><span>Jenkins</span></div>
-      <div class="skill" data-level="3"><div class="bar"></div><span>Docker</span></div>
-      <div class="skill" data-level="3"><div class="bar"></div><span>K8s</span></div>
-      <div class="skill" data-level="5"><div class="bar"></div><span>Java</span></div>
-      <div class="skill" data-level="4"><div class="bar"></div><span>SQL</span></div>
-      <div class="skill" data-level="5"><div class="bar"></div><span>HTML</span></div>
-      <div class="skill" data-level="4"><div class="bar"></div><span>CSS</span></div>
-      <div class="skill" data-level="3"><div class="bar"></div><span>JS</span></div>
-      <div class="skill" data-level="3"><div class="bar"></div><span>Angular</span></div>
+      <div class="skill" data-level="4"><span class="level-label">4 &#9733;</span><div class="bar"></div><span class="skill-name">DevOps</span></div>
+      <div class="skill" data-level="4"><span class="level-label">4 &#9733;</span><div class="bar"></div><span class="skill-name">AWS</span></div>
+      <div class="skill" data-level="5"><span class="level-label">5 &#9733;</span><div class="bar"></div><span class="skill-name">Linux</span></div>
+      <div class="skill" data-level="4"><span class="level-label">4 &#9733;</span><div class="bar"></div><span class="skill-name">Jenkins</span></div>
+      <div class="skill" data-level="3"><span class="level-label">3 &#9733;</span><div class="bar"></div><span class="skill-name">Docker</span></div>
+      <div class="skill" data-level="3"><span class="level-label">3 &#9733;</span><div class="bar"></div><span class="skill-name">K8s</span></div>
+      <div class="skill" data-level="5"><span class="level-label">5 &#9733;</span><div class="bar"></div><span class="skill-name">Java</span></div>
+      <div class="skill" data-level="4"><span class="level-label">4 &#9733;</span><div class="bar"></div><span class="skill-name">SQL</span></div>
+      <div class="skill" data-level="5"><span class="level-label">5 &#9733;</span><div class="bar"></div><span class="skill-name">HTML</span></div>
+      <div class="skill" data-level="4"><span class="level-label">4 &#9733;</span><div class="bar"></div><span class="skill-name">CSS</span></div>
+      <div class="skill" data-level="3"><span class="level-label">3 &#9733;</span><div class="bar"></div><span class="skill-name">JS</span></div>
+      <div class="skill" data-level="3"><span class="level-label">3 &#9733;</span><div class="bar"></div><span class="skill-name">Angular</span></div>
     </div>
   </section>
 
@@ -88,69 +88,51 @@
     <br>
     <h2><i>Or Get in Touch via Form </i></h2>
     <div class="contact-content">
-      <!-- <form action="https://formspree.io/f/xaqplydp" method="POST">
-        <label><input type="text" placeholder="Name" name="name" required></label>
-        <label><input type="email" placeholder="E-mail" name="email" required></label>
-        <label><input name="company" placeholder="Provide your company name"></label>
-        <label><textarea name="message" placeholder="Please give a message"></textarea></label>
-        <button type="submit">Send</button>
-      </form> -->
-
       <form id="contact-form">
+        <input type="text" id="name" placeholder="Your Name" required>
+        <input type="email" id="email" placeholder="Your Email" required>
+        <input type="text" id="company" placeholder="Your Company" required>
+        <textarea id="message" placeholder="Your Message"></textarea>
+        <i>Just click once and wait for 5-9 seconds please</i>
+        <button type="submit" id="sendBtn">Send</button>
+      </form>
 
-<input type="text" id="name" placeholder="Your Name" required>
+      <script>
+        const scriptURL = "https://script.google.com/macros/s/AKfycbwrRvvSML-RXStSapbUeMNMxatSxAJJ7B0oHSBrBr9v2YrFRH8dG09zVl2uznwru_ishg/exec";
+        const form = document.getElementById("contact-form");
+        const btn = document.getElementById("sendBtn");
 
-<input type="email" id="email" placeholder="Your Email" required>
+        form.addEventListener("submit", function(e) {
+          e.preventDefault();
+          btn.innerText = "Sending...";
+          btn.disabled = true;
 
-<input type="company" id="company" placeholder="Your Company" required>
+          const data = {
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            company: document.getElementById("company").value,
+            message: document.getElementById("message").value
+          };
 
-<textarea id="message" placeholder="Your Message"></textarea>
-
-<i>Just click once and wait for 5-9 seconds please</i>
-
-<button type="submit" id="sendBtn">Send</button>
-
-</form>
-<script>
-const scriptURL = "https://script.google.com/macros/s/AKfycbwrRvvSML-RXStSapbUeMNMxatSxAJJ7B0oHSBrBr9v2YrFRH8dG09zVl2uznwru_ishg/exec";
-
-const form = document.getElementById("contact-form");
-const btn = document.getElementById("sendBtn");
-
-form.addEventListener("submit", function(e){
-    e.preventDefault();
-
-    btn.innerText = "Sending...";
-    btn.disabled = true;
-
-    const data = {
-        name: document.getElementById("name").value,
-        email: document.getElementById("email").value,
-        company: document.getElementById("company").value,
-        message: document.getElementById("message").value
-    };
-
-    fetch(scriptURL, {
-        method: "POST",
-        body: JSON.stringify(data)
-    })
-    .then(res => res.text())   // 👈 important fix
-    .then(data => {
-        alert("✅ Form submitted successfully!");
-        form.reset();
-
-        btn.innerText = "Send";
-        btn.disabled = false;
-    })
-    .catch(err => {
-        console.error(err);   // 👈 shows real error
-        alert("❌ Error! Check console (F12)");
-
-        btn.innerText = "Send";
-        btn.disabled = false;
-    });
-});
-</script>
+          fetch(scriptURL, {
+            method: "POST",
+            body: JSON.stringify(data)
+          })
+          .then(res => res.text())
+          .then(data => {
+            alert("✅ Form submitted successfully!");
+            form.reset();
+            btn.innerText = "Send";
+            btn.disabled = false;
+          })
+          .catch(err => {
+            console.error(err);
+            alert("❌ Error! Check console (F12)");
+            btn.innerText = "Send";
+            btn.disabled = false;
+          });
+        });
+      </script>
     </div>
   </section>
 
@@ -159,31 +141,73 @@ form.addEventListener("submit", function(e){
   </footer>
 
   <script>
-    /* ── Skill bars ── */
-    const skills = document.querySelectorAll(".skill");
+    /* ══════════════════════════════════════════
+       SKILL BARS — fully responsive fix
+       Uses percentage of container height so bars
+       always scale correctly on every screen size
+       and when DevTools panel opens/closes.
+    ══════════════════════════════════════════ */
+    function animateSkills() {
+      document.querySelectorAll(".skill").forEach(s => {
+        const level     = parseInt(s.getAttribute("data-level"));
+        const totalH    = s.offsetHeight;          // actual rendered height
+        const labelH    = 20;                       // .level-label height (px)
+        const nameH     = 28;                       // .skill-name height (px)
+        const available = totalH - labelH - nameH;  // space left for the bar
+        const barH      = (level / 5) * available;  // proportional to level
+        s.querySelector(".bar").style.height = barH + "px";
+        s.classList.add("bar-animated");
+      });
+    }
+
+    function resetSkills() {
+      document.querySelectorAll(".skill").forEach(s => {
+        s.querySelector(".bar").style.height = "0px";
+        s.classList.remove("bar-animated");
+      });
+    }
+
+    /* ── Observe the skills section ── */
+    const skillSection = document.querySelector(".skills-section");
+
     const skillObserver = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          const level = entry.target.getAttribute("data-level");
-          entry.target.querySelector(".bar").style.height = (level * 40) + "px";
+          animateSkills();
+        } else {
+          resetSkills();  // reset so it re-animates cleanly on re-entry
         }
       });
-    }, { threshold: 0.3 });
-    skills.forEach(s => skillObserver.observe(s));
+    }, { threshold: 0.1 });
 
-    /* ── Section reveal: triggers when top of section has passed 40% of viewport ── */
+    skillObserver.observe(skillSection);
+
+    /* ── Re-calculate on window resize (DevTools open/close fix) ── */
+    let resizeTimer;
+    window.addEventListener("resize", () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        const rect = skillSection.getBoundingClientRect();
+        const inView = rect.top < window.innerHeight && rect.bottom > 0;
+        if (inView) {
+          animateSkills();   // recalculate with new container dimensions
+        } else {
+          resetSkills();
+        }
+      }, 150);
+    });
+
+    /* ══════════════════════════════════════════
+       SECTION REVEAL
+    ══════════════════════════════════════════ */
     const sections = document.querySelectorAll("section");
 
-    // Start all non-home sections hidden
     sections.forEach(sec => {
       if (sec.id !== "home") {
         sec.classList.add("section-hidden");
       }
     });
 
-    // rootMargin: "-40% 0px 0px 0px" means the observer fires only when
-    // the section's TOP edge has moved 40% UP from the bottom of the viewport,
-    // i.e. you've scrolled 40% into it.
     const revealObserver = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -193,7 +217,7 @@ form.addEventListener("submit", function(e){
         }
       });
     }, {
-      rootMargin: "-40% 0px 0px 0px",
+      rootMargin: "-20% 0px 0px 0px",  // relaxed from -40% — works on small viewports
       threshold: 0
     });
 
